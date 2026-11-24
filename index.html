@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vocab ASAS Kelas 4</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap">
+<style>
+/* Layout: one narrow column, tabs on top, month chips shared by all three views */
+:root{
+  --bg:#f5f7fb; --surface:#ffffff; --ink:#15223b; --muted:#5b6882; --line:#dde3ee;
+  --accent:#0e7c86; --accent-ink:#ffffff; --mark:#ffd45c; --good:#1c8a4c; --good-bg:#e0f5e8; --bad:#c23a3a; --bad-bg:#fbe5e5;
+  --display:'Fredoka','Trebuchet MS',system-ui,sans-serif; --body:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1626; --surface:#18223a; --ink:#eaf0fb; --muted:#9aa8c4; --line:#2a3656;
+  --accent:#43c0cb; --accent-ink:#06222a; --mark:#e8b934; --good:#5fd08b; --good-bg:#17382a; --bad:#ff8a8a; --bad-bg:#3d1f26; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1626; --surface:#18223a; --ink:#eaf0fb; --muted:#9aa8c4; --line:#2a3656;
+  --accent:#43c0cb; --accent-ink:#06222a; --mark:#e8b934; --good:#5fd08b; --good-bg:#17382a; --bad:#ff8a8a; --bad-bg:#3d1f26; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 var(--body);padding-block:20px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+h1{font:600 1.9rem/1.15 var(--display);margin:0;text-wrap:balance}
+h1 mark{background:linear-gradient(transparent 55%,var(--mark) 55%);color:inherit;padding:0 .1em}
+.sub{margin:4px 0 0;color:var(--muted)}
+.tabs{display:flex;gap:6px;border-bottom:2px solid var(--line)}
+.tab{font:600 1rem var(--display);background:none;border:0;color:var(--muted);padding:10px 16px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:600 .875rem var(--body);background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:5px 12px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.count{color:var(--muted);font-size:.875rem}
+/* study */
+.grp{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.grp h3{margin:0;font:600 1.05rem var(--display)}
+.grp h3 span{color:var(--muted);font-weight:500;font-size:.9rem;margin-right:6px}
+.row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,2fr) auto;gap:4px 12px;align-items:baseline;padding:6px 0;border-top:1px solid var(--line)}
+.row:first-of-type{border-top:0}
+.ex{grid-column:1/-1;color:var(--muted);font-size:.875rem;padding-left:10px;border-left:3px solid var(--mark)}
+.w{font-weight:700}.id{color:var(--accent);font-weight:600}.sn{color:var(--muted)}
+.say{font:600 .8rem var(--body);background:none;border:1px solid var(--line);color:var(--muted);border-radius:6px;padding:2px 8px;cursor:pointer}
+@media(max-width:560px){.row{grid-template-columns:1fr auto}.row .sn{grid-column:1/-1}}
+/* panels */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 18px;display:flex;flex-direction:column;gap:14px;align-items:stretch}
+.btn{font:600 1rem var(--display);background:var(--accent);color:var(--accent-ink);border:0;border-radius:8px;padding:10px 18px;cursor:pointer}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.card{min-height:200px;border:2px solid var(--line);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:20px;cursor:pointer;background:var(--bg);width:100%;color:var(--ink);font:inherit}
+.card .big{font:600 2.2rem/1.2 var(--display);overflow-wrap:anywhere}
+.card .hint{color:var(--muted);font-size:.85rem}
+.card .back{color:var(--accent);font:600 1.4rem var(--display)}
+.q{font:600 1.5rem/1.3 var(--display);text-align:center;overflow-wrap:anywhere}
+.qmeta{display:flex;justify-content:space-between;color:var(--muted);font-size:.9rem}
+.bar{height:6px;background:var(--line);border-radius:4px;overflow:hidden}.bar i{display:block;height:100%;background:var(--accent)}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:480px){.opts{grid-template-columns:1fr}}
+.opt{font:600 1.05rem var(--body);background:var(--bg);color:var(--ink);border:2px solid var(--line);border-radius:10px;padding:12px;cursor:pointer;text-align:center;overflow-wrap:anywhere}
+.opt.ok{background:var(--good-bg);border-color:var(--good)}.opt.no{background:var(--bad-bg);border-color:var(--bad)}
+input[type=text],select{font:1.1rem var(--body);padding:10px 12px;border:2px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%}
+.fb{text-align:center;font-weight:700;min-height:1.5em}.fb.ok{color:var(--good)}.fb.no{color:var(--bad)}
+.blank{font:600 1.4rem var(--display);letter-spacing:.15em;text-align:center;color:var(--muted)}
+.score{font:600 3rem var(--display);text-align:center}
+.wrong{margin:0;padding-left:20px}.wrong li{padding:2px 0}
+label{font-weight:700;font-size:.9rem;display:block;margin-bottom:4px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:480px){.fields{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header>
+    <h1>Vocab <mark>ASAS</mark> Kelas 4</h1>
+    <p class="sub">Kosakata Juli sampai Desember untuk English vocab test hari Rabu, 25 November.</p>
+  </header>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="t-belajar" data-v="belajar">Belajar</button>
+    <button class="tab" role="tab" id="t-kartu" data-v="kartu">Kartu</button>
+    <button class="tab" role="tab" id="t-kuis" data-v="kuis">Kuis</button>
+  </div>
+  <div class="chips" id="chips" aria-label="Pilih bulan"></div>
+  <div class="count" id="count"></div>
+  <main id="view"></main>
+</div>
+
+<script>
+// [bulan, tema, [[kata, kalimat, arti], ...]]
+var G=[
+["Juli","Describing People",[["bald","My grandfather is bald.","botak"],["beard","He has a long beard.","jenggot"],["chubby","The baby is chubby.","gemuk, tembem"],["curly","She has curly hair.","keriting"],["straight","I have straight hair.","lurus"]]],
+["Juli","Personality",[["clever","She is clever in math.","pintar"],["friendly","My cat is friendly.","ramah"],["helpful","He is helpful to his friends.","suka menolong"],["lazy","I am lazy on Sunday.","malas"],["polite","Always be polite.","sopan"]]],
+["Juli","Health Problems",[["headache","I have a headache.","sakit kepala"],["toothache","She has a toothache.","sakit gigi"],["stomachache","He has a stomachache.","sakit perut"],["sick","My sister is sick.","sakit"],["tired","I feel tired today.","lelah"]]],
+["Juli","Kitchen Actions",[["boil","Please boil the water.","merebus"],["cut","I cut the apple.","memotong"],["fry","She fries the fish.","menggoreng"],["pan","The pan is hot.","wajan"],["knife","Use the knife carefully.","pisau"]]],
+["Agustus","Kitchen Utensils",[["oven","The cake is in the oven.","oven"],["pot","This pot is big.","panci"],["stove","The stove is hot.","kompor"],["fork","I eat with a fork.","garpu"],["spoon","I use a spoon to eat soup.","sendok"]]],
+["Agustus","Farm",[["farmer","The farmer grows rice.","petani"],["vegetables","I eat vegetables every day.","sayuran"],["milk the cows","They milk the cows every morning.","memerah sapi"],["collect eggs","I collect eggs from the hen house.","mengumpulkan telur"],["countryside","I love the countryside.","pedesaan"]]],
+["Agustus","Farm Life",[["pond","There is a pond in the village.","kolam"],["village","My grandma lives in a village.","desa"],["pick fruit","We pick fruit in the garden.","memetik buah"],["plant corn","They plant corn in the field.","menanam jagung"],["drive a tractor","He can drive a tractor.","mengemudikan traktor"]]],
+["Agustus","Wild Animals",[["lion","The lion is the king of the jungle.","singa"],["tiger","The tiger is strong and fast.","harimau"],["monkey","The monkey can jump high.","monyet"],["panda","The panda eats bamboo.","panda"],["zebra","The zebra has black and white stripes.","zebra"]]],
+["September","Safari Animals",[["elephant","The elephant is very big.","gajah"],["giraffe","The giraffe has a long neck.","jerapah"],["crocodile","The crocodile lives in water.","buaya"],["hippo","The hippo is fat and strong.","kuda nil"],["kangaroo","Kangaroos can jump high.","kanguru"]]],
+["September","Jungle Animals",[["gorilla","A gorilla is very strong.","gorila"],["rhino","A rhino has a big horn.","badak"],["tortoise","The tortoise walks slowly.","kura-kura darat"],["noisy","The parrot is noisy.","berisik"],["scary","The dark room is scary.","menakutkan"]]],
+["September","At The Doctor",[["tired","I feel tired after running.","lelah"],["rest","You should rest if you are sick.","istirahat"],["see a doctor","Let's see a doctor.","pergi ke dokter"],["take medicine","I take medicine when I am ill.","minum obat"],["call an ambulance","Call an ambulance quickly!","memanggil ambulans"]]],
+["September","Kitchen Items",[["kitchen","Mother is in the kitchen.","dapur"],["fridge","The fridge is full of food.","kulkas"],["toaster","I use a toaster for bread.","pemanggang roti"],["heat","Heat the soup in the pot.","memanaskan"],["cool","Let the tea cool down.","dingin, mendingin"]]],
+["Oktober","Describing Appearance",[["eyebrows","She has thick eyebrows.","alis"],["moustache","My uncle has a moustache.","kumis"],["beard","His beard is long and black.","jenggot"],["pretty","She is very pretty.","cantik"],["good-looking","He is a good-looking boy.","tampan"]]],
+["Oktober","Character",[["lazy","Don't be lazy in the morning.","malas"],["naughty","The naughty boy runs in class.","nakal"],["diligent","She is diligent at studying.","rajin"],["patient","Be patient when waiting.","sabar"],["polite","He is polite to teachers.","sopan"]]],
+["Oktober","Doctor Visit",[["see a dentist","I will see a dentist tomorrow.","pergi ke dokter gigi"],["earache","I have an earache today.","sakit telinga"],["stomachache","My brother has a stomachache.","sakit perut"],["temperature","She has a high temperature.","suhu badan, demam"],["take a nap","I take a nap after lunch.","tidur sebentar"]]],
+["Oktober","Kitchen Items",[["dishes","I wash the dishes.","piring dan perabot makan"],["chopsticks","I eat noodles with chopsticks.","sumpit"],["pot","The pot is big and heavy.","panci"],["stove","Be careful near the stove.","kompor"],["toaster","The toaster makes the bread hot.","pemanggang roti"]]],
+["November","Farm & Food",[["bake bread","We bake bread every Sunday.","memanggang roti"],["grill steaks","My father grills steaks on Sunday.","memanggang steik"],["make breakfast","I make breakfast for my family.","membuat sarapan"],["pick fruit","We pick fruit from the tree.","memetik buah"],["plant corn","They plant corn on the farm.","menanam jagung"]]],
+["November","Farm Chores",[["cut the grass","I cut the grass in the yard.","memotong rumput"],["clean the barn","They clean the barn every day.","membersihkan kandang"],["drive a tractor","My uncle drives a tractor.","mengemudikan traktor"],["shut the gate","Please shut the gate!","menutup gerbang"],["village","My village is very quiet.","desa"]]],
+["November","Wild Animals",[["lion","The lion is big and strong.","singa"],["monkey","The monkey climbs the tree.","monyet"],["panda","The panda eats bamboo.","panda"],["kangaroo","The kangaroo jumps high.","kanguru"],["elephant","The elephant has a long trunk.","gajah"]]],
+["November","Safari Animals",[["giraffe","Giraffes have long necks.","jerapah"],["zebra","The zebra has black stripes.","zebra"],["crocodile","The crocodile lives in the water.","buaya"],["hippo","The hippo is fat.","kuda nil"],["rhino","The rhino has a horn.","badak"]]],
+["Desember","Describing People & Things",[["noisy","My neighbor is noisy.","berisik"],["scary","The movie is scary.","menakutkan"],["strong","The tiger is strong.","kuat"],["large","The elephant is large.","besar"],["best","She is my best friend.","terbaik"]]],
+["Desember","Time of Day",[["a.m.","I wake up at 6 a.m.","pagi (sebelum jam 12 siang)"],["p.m.","We play at 4 p.m.","siang atau malam (setelah jam 12 siang)"],["pond","Ducks swim in the pond.","kolam"],["lots of","There are lots of stars.","banyak"],["oh dear!","Oh dear! I forgot my book.","aduh!"]]],
+["Desember","Kitchen Utensils",[["knife","Don't play with a knife.","pisau"],["fork","Use a fork to eat.","garpu"],["spoon","I eat soup with a spoon.","sendok"],["pan","The pan is on the stove.","wajan"],["oven","The cake is in the oven.","oven"]]],
+["Desember","Feelings & Health",[["tired","I am tired today.","lelah"],["rest","You need to rest.","istirahat"],["cry","Babies cry a lot.","menangis"],["feel","I feel happy today.","merasa"],["cool","Let the tea cool down.","dingin, mendingin"]]]
+];
+// Contoh kalimat tambahan (mirip kalimat di dokumen)
+var EX={
+"bald":["The old man is bald.","My uncle is bald, but he is happy."],
+"beard":["The farmer has a white beard.","Santa Claus has a big beard."],
+"chubby":["My little brother is chubby.","The puppy is chubby and cute."],
+"curly":["My cousin has curly hair.","The sheep has curly wool."],
+"straight":["She has long straight hair.","Draw a straight line."],
+"clever":["My sister is clever at reading.","The clever boy wins the quiz."],
+"friendly":["The new teacher is friendly.","Our neighbor is very friendly."],
+"helpful":["She is helpful at home.","The helpful boy carries my bag."],
+"lazy":["The cat is lazy today.","Don't be lazy, please wake up."],
+"polite":["Say thank you to be polite.","He is polite to his grandmother."],
+"headache":["I have a headache after school.","Mom has a headache today."],
+"toothache":["My brother has a toothache.","Candy gives me a toothache."],
+"stomachache":["I have a stomachache now.","She has a stomachache after lunch."],
+"sick":["My friend is sick today.","I stay at home when I am sick."],
+"tired":["The boy is tired after the game.","I am tired, so I go to bed."],
+"boil":["Boil the eggs for ten minutes.","Mom boils water for tea."],
+"cut":["Cut the bread, please.","I cut the paper with scissors."],
+"fry":["Dad fries the chicken.","I like to fry rice."],
+"pan":["Put the egg in the pan.","The pan is on the stove."],
+"knife":["The knife is sharp.","Mom cuts the onion with a knife."],
+"oven":["The oven is very hot.","She puts the pizza in the oven."],
+"pot":["The soup is in the pot.","Mom cooks rice in a big pot."],
+"stove":["Don't touch the stove.","The pot is on the stove."],
+"fork":["I eat noodles with a fork.","Put the fork next to the plate."],
+"spoon":["He eats ice cream with a spoon.","Give me a big spoon, please."],
+"farmer":["The farmer has many cows.","My uncle is a farmer."],
+"vegetables":["Vegetables are good for you.","We buy vegetables at the market."],
+"milk the cows":["The farmer milks the cows early.","I want to milk the cows on the farm."],
+"collect eggs":["She collects eggs every morning.","We collect eggs for breakfast."],
+"countryside":["The countryside is green and quiet.","We visit the countryside on holiday."],
+"pond":["The fish live in the pond.","A frog sits by the pond."],
+"village":["The village is quiet at night.","My friend lives in a small village."],
+"pick fruit":["We pick fruit in the morning.","They pick fruit from the mango tree."],
+"plant corn":["The farmers plant corn in May.","We plant corn near the river."],
+"drive a tractor":["My grandfather drives a tractor.","The farmer drives a tractor to the field."],
+"lion":["The lion sleeps under the tree.","A lion has a big mane."],
+"tiger":["The tiger has orange stripes.","A tiger runs very fast."],
+"monkey":["The monkey eats a banana.","A monkey lives in the tree."],
+"panda":["The panda is black and white.","A panda eats bamboo all day."],
+"zebra":["The zebra runs in the grass.","A zebra has stripes."],
+"elephant":["The elephant drinks a lot of water.","An elephant has big ears."],
+"giraffe":["The giraffe eats leaves.","A giraffe is very tall."],
+"crocodile":["The crocodile has sharp teeth.","A crocodile swims in the river."],
+"hippo":["The hippo likes the water.","A hippo has a big mouth."],
+"kangaroo":["The kangaroo carries a baby.","A kangaroo lives in Australia."],
+"gorilla":["The gorilla eats fruit.","A gorilla is big and strong."],
+"rhino":["The rhino has two horns.","A rhino walks slowly."],
+"tortoise":["The tortoise is very slow.","A tortoise has a hard shell."],
+"noisy":["The classroom is noisy.","The noisy dog barks all night."],
+"scary":["The ghost story is scary.","The big snake is scary."],
+"rest":["Please rest for a while.","The doctor says, \"Rest at home.\""],
+"see a doctor":["I see a doctor when I am sick.","You must see a doctor today."],
+"take medicine":["Take medicine after dinner.","He takes medicine three times a day."],
+"call an ambulance":["Please call an ambulance.","We call an ambulance for the sick man."],
+"kitchen":["Dad cooks in the kitchen.","The kitchen is clean."],
+"fridge":["The milk is in the fridge.","Put the fruit in the fridge."],
+"toaster":["The toaster is on the table.","I make toast with a toaster."],
+"heat":["Heat the milk, please.","Mom heats the food for lunch."],
+"cool":["The juice is cool.","Let the soup cool down."],
+"eyebrows":["He has black eyebrows.","My eyebrows are thin."],
+"moustache":["My grandfather has a moustache.","The man has a small moustache."],
+"pretty":["The flower is pretty.","Her dress is pretty."],
+"good-looking":["The actor is good-looking.","She has a good-looking brother."],
+"naughty":["The naughty cat jumps on the table.","Don't be naughty in class."],
+"diligent":["He is diligent at school.","A diligent student does homework."],
+"patient":["Be patient with little children.","The nurse is very patient."],
+"see a dentist":["I see a dentist for my teeth.","She sees a dentist every six months."],
+"earache":["My sister has an earache.","An earache hurts a lot."],
+"temperature":["The baby has a high temperature.","The nurse checks my temperature."],
+"take a nap":["The baby takes a nap at noon.","I take a nap after school."],
+"dishes":["I wash the dishes after dinner.","The dishes are on the table."],
+"chopsticks":["He uses chopsticks to eat.","Chopsticks are made of wood."],
+"bake bread":["Grandma bakes bread in the morning.","We bake bread in the oven."],
+"grill steaks":["Dad grills steaks in the garden.","They grill steaks for dinner."],
+"make breakfast":["Mom makes breakfast at six.","I help to make breakfast."],
+"cut the grass":["Dad cuts the grass on Sunday.","They cut the grass in the park."],
+"clean the barn":["The farmer cleans the barn.","We clean the barn after school."],
+"shut the gate":["Please shut the gate at night.","He shuts the gate after the cows go in."],
+"strong":["The elephant is strong.","My father is strong."],
+"large":["The farm is large.","I want a large glass of water."],
+"best":["He is my best friend.","This is the best cake."],
+"a.m.":["School starts at 7 a.m.","I get up at 5 a.m."],
+"p.m.":["We go home at 1 p.m.","I sleep at 9 p.m."],
+"lots of":["There are lots of fish in the pond.","We have lots of books."],
+"oh dear!":["Oh dear! I am late.","Oh dear! The glass is broken."],
+"cry":["The baby cries at night.","Don't cry, it's okay."],
+"feel":["I feel sad today.","How do you feel now?"]
+};
+var MONTHS=["Juli","Agustus","September","Oktober","November","Desember"];
+var S={view:"belajar",month:"November",card:null,quiz:null};
+var $=function(s){return document.querySelector(s)};
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function groups(){return G.filter(function(g){return S.month==="all"||g[0]===S.month})}
+function words(m){var seen={},out=[];G.forEach(function(g){if(m!=="all"&&g[0]!==m)return;g[2].forEach(function(w){if(!seen[w[0]]){seen[w[0]]=1;out.push({w:w[0],s:w[1],a:w[2],e:EX[w[0]]||[]})}})});return out}
+function speak(t){try{var u=new SpeechSynthesisUtterance(t);u.lang="en-US";u.rate=.85;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}}
+function norm(t){return t.toLowerCase().replace(/[^a-z0-9 ]/g,"").replace(/\s+/g," ").trim()}
+
+function chips(){
+  var h='<button class="chip" aria-pressed="'+(S.month==="all")+'" data-m="all">Semua</button>';
+  MONTHS.forEach(function(m){h+='<button class="chip" aria-pressed="'+(S.month===m)+'" data-m="'+m+'">'+m+'</button>'});
+  $("#chips").innerHTML=h;
+  $("#count").textContent=words(S.month).length+" kata berbeda"+(S.month==="all"?" dari Juli sampai Desember":" di bulan "+S.month);
+}
+function tabs(){["belajar","kartu","kuis"].forEach(function(v){$("#t-"+v).setAttribute("aria-selected",S.view===v)})}
+
+function viewBelajar(){
+  var h="";
+  groups().forEach(function(g){
+    h+='<section class="grp"><h3><span>'+g[0]+'</span>'+esc(g[1])+'</h3>';
+    g[2].forEach(function(w){h+='<div class="row"><span class="w">'+esc(w[0])+'</span><span class="id">'+esc(w[2])+'</span><span class="sn">'+esc(w[1])+'</span><button class="say" data-say="'+esc(w[0])+'" aria-label="Dengar '+esc(w[0])+'">Dengar</button>'+((EX[w[0]]||[]).length?'<div class="ex">Contoh lain: '+EX[w[0]].map(esc).join(" &nbsp;·&nbsp; ")+'</div>':'')+'</div>'});
+    h+='</section>';
+  });
+  $("#view").innerHTML='<div style="display:flex;flex-direction:column;gap:12px">'+h+'</div>';
+}
+
+function viewKartu(){
+  var c=S.card;
+  if(!c||c.m!==S.month){c=S.card={m:S.month,list:shuffle(words(S.month)),i:0,flip:false}}
+  var w=c.list[c.i];
+  var h='<div class="panel"><div class="qmeta"><span>Kartu '+(c.i+1)+' dari '+c.list.length+'</span><span>Tap kartu untuk membalik</span></div>';
+  h+='<button class="card" id="flip" aria-label="Balik kartu">';
+  if(!c.flip){h+='<div class="big">'+esc(w.w)+'</div><div class="hint">Apa artinya?</div>'}
+  else{h+='<div class="back">'+esc(w.a)+'</div><div class="sn">'+[w.s].concat(w.e).map(esc).join("<br>")+'</div>'}
+  h+='</button><div class="btns"><button class="btn alt" id="prev">Sebelumnya</button><button class="btn" id="next">Berikutnya</button><button class="btn alt" data-say="'+esc(w.w)+'">Dengar</button><button class="btn alt" id="shuf">Acak ulang</button></div></div>';
+  $("#view").innerHTML=h;
+}
+
+function viewKuis(){
+  var q=S.quiz;
+  if(!q||q.stage==="setup"){
+    var n=words(S.month).length;
+    $("#view").innerHTML='<div class="panel"><div class="fields"><div><label for="mode">Jenis soal</label><select id="mode"><option value="ie">Arti → pilih kata Inggris</option><option value="ty">Arti → ketik kata Inggris</option><option value="ei">Kata Inggris → pilih arti</option></select></div><div><label for="num">Jumlah soal</label><select id="num"><option>10</option><option>20</option><option value="all">Semua ('+n+')</option></select></div></div><div class="btns"><button class="btn" id="go">Mulai kuis</button></div></div>';
+    return;
+  }
+  if(q.stage==="done"){
+    var h='<div class="panel"><div class="score">'+q.score+' / '+q.list.length+'</div>';
+    if(q.wrong.length){h+='<div><strong>Yang masih salah:</strong><ul class="wrong">'+q.wrong.map(function(w){return'<li><b>'+esc(w.w)+'</b>: '+esc(w.a)+'</li>'}).join("")+'</ul></div>'}
+    else h+='<p style="text-align:center">Semua benar.</p>';
+    h+='<div class="btns">'+(q.wrong.length?'<button class="btn" id="redo">Ulangi yang salah</button>':'')+'<button class="btn alt" id="again">Kuis baru</button></div></div>';
+    $("#view").innerHTML=h;return;
+  }
+  var w=q.list[q.i],h='<div class="panel"><div class="qmeta"><span>Soal '+(q.i+1)+' dari '+q.list.length+'</span><span>Benar: '+q.score+'</span></div><div class="bar"><i style="width:'+(q.i/q.list.length*100)+'%"></i></div>';
+  if(q.mode==="ei"){
+    h+='<div class="q">'+esc(w.w)+'</div><div class="opts" id="opts">'+q.opts.map(function(o){return'<button class="opt" data-o="'+esc(o.a)+'">'+esc(o.a)+'</button>'}).join("")+'</div>';
+  }else if(q.mode==="ie"){
+    h+='<div class="q">'+esc(w.a)+'</div><div class="opts" id="opts">'+q.opts.map(function(o){return'<button class="opt" data-o="'+esc(o.w)+'">'+esc(o.w)+'</button>'}).join("")+'</div>';
+  }else{
+    var pat=w.w.replace(/[A-Za-z0-9]/g,"_ ").replace(/ +/g," ");
+    h+='<div class="q">'+esc(w.a)+'</div><div class="blank" aria-label="'+w.w.length+' huruf">'+esc(pat)+'</div><form id="tf" style="display:flex;flex-direction:column;gap:10px"><input type="text" id="ans" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Jawaban"><button class="btn" id="chk" type="submit">Periksa</button></form>';
+  }
+  h+='<div class="fb" id="fb"></div><div class="btns" id="nx" hidden><button class="btn" id="nextq">'+(q.i+1===q.list.length?"Lihat nilai":"Soal berikutnya")+'</button></div></div>';
+  $("#view").innerHTML=h;
+  if(q.mode==="ty"){$("#ans").focus()}
+}
+function startQuiz(list,mode){
+  var all=words("all");
+  S.quiz={stage:"play",mode:mode,list:list,i:0,score:0,wrong:[],done:false};
+  list.forEach(function(w){var o=shuffle(all.filter(function(x){return x.w!==w.w&&x.a!==w.a}));var pick=[],seen={};o.forEach(function(x){if(pick.length<3&&!seen[x.a]){seen[x.a]=1;pick.push(x)}});w.opts=shuffle(pick.concat([w]))});
+  S.quiz.opts=null;nextOpts();viewKuis();
+}
+function nextOpts(){var q=S.quiz;if(q.stage==="play")q.opts=q.list[q.i].opts}
+function answer(ok,correctText){
+  var q=S.quiz;if(q.done)return;q.done=true;
+  if(ok)q.score++;else q.wrong.push(q.list[q.i]);
+  var fb=$("#fb");fb.className="fb "+(ok?"ok":"no");fb.textContent=ok?"Benar!":"Jawaban yang benar: "+correctText;
+  $("#nx").hidden=false;$("#nextq").focus();
+}
+function render(){tabs();chips();if(S.view==="belajar")viewBelajar();else if(S.view==="kartu")viewKartu();else viewKuis()}
+function setView(v){S.view=v;try{history.replaceState(null,"","#"+v)}catch(e){}render()}
+
+document.addEventListener("click",function(e){
+  var t=e.target.closest("button");if(!t)return;
+  if(t.dataset.v)return setView(t.dataset.v);
+  if(t.dataset.m){S.month=t.dataset.m;S.card=null;if(S.quiz&&S.quiz.stage!=="play")S.quiz=null;return render()}
+  if(t.dataset.say!==undefined)return speak(t.dataset.say);
+  var c=S.card,q=S.quiz;
+  if(t.id==="flip"){c.flip=!c.flip;return viewKartu()}
+  if(t.id==="next"){c.i=(c.i+1)%c.list.length;c.flip=false;return viewKartu()}
+  if(t.id==="prev"){c.i=(c.i-1+c.list.length)%c.list.length;c.flip=false;return viewKartu()}
+  if(t.id==="shuf"){S.card=null;return viewKartu()}
+  if(t.id==="go"){var n=$("#num").value,l=shuffle(words(S.month));if(n!=="all")l=l.slice(0,+n);return startQuiz(l,$("#mode").value)}
+  if(t.id==="again"){S.quiz=null;return viewKuis()}
+  if(t.id==="redo"){return startQuiz(shuffle(q.wrong),q.mode)}
+  if(t.id==="nextq"){q.done=false;q.i++;if(q.i>=q.list.length){q.stage="done"}else nextOpts();return viewKuis()}
+  if(t.classList.contains("opt")&&q&&!q.done){
+    var w=q.list[q.i],correct=q.mode==="ei"?w.a:w.w,ok=t.dataset.o===correct;
+    document.querySelectorAll(".opt").forEach(function(b){b.disabled=true;if(b.dataset.o===correct)b.classList.add("ok")});
+    if(!ok)t.classList.add("no");
+    if(q.mode==="ie")speak(w.w);
+    answer(ok,correct);
+  }
+});
+document.addEventListener("submit",function(e){
+  if(e.target.id!=="tf")return;e.preventDefault();
+  var q=S.quiz;if(q.done)return;var w=q.list[q.i];
+  var ok=norm($("#ans").value)===norm(w.w);
+  $("#ans").disabled=true;$("#chk").hidden=true;speak(w.w);answer(ok,w.w);
+});
+var h0=(location.hash||"").slice(1);if(["belajar","kartu","kuis"].indexOf(h0)>=0)S.view=h0;
+render();
+</script>
+
+</body>
+</html>
